@@ -79,24 +79,65 @@ h6 {
 * Main css
 */
 
-.banner-1,
-.banner-2 {
-  position: relative;
-}
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap");
 
-.banner-1::after {
-  content: "";
-  display: block;
-  position: absolute;
-  z-index: -1;
-  border-radius: 624.9375rem;
-  bottom: 3%;
-  left: 15%;
-  height: 74%;
-  width: 400%;
-  background-color: theme("colors.soft-blue");
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-.width-fill-available {
-  width: -webkit-fill-available;
+@layer base {
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  html {
+    font-family: "Rubik", sans-serif;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  .banner-1,
+  .banner-2 {
+    position: relative;
+  }
+
+  .banner-1::after {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -1;
+    border-radius: 624.9375rem;
+    bottom: 3%;
+    left: 15%;
+    height: 74%;
+    width: 400%;
+    background-color: theme("colors.soft-blue");
+  }
+
+  details[open] img {
+    transform: rotate(180deg);
+    filter: brightness(0) saturate(100%) invert(52%) sepia(43%) saturate(4016%) hue-rotate(326deg) brightness(98%)
+      contrast(99%);
+  }
+
+  div[hidden] {
+    display: none;
+  }
+
+  body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  body.lock-scroll {
+    overflow: hidden;
+    height: 100vh;
+  }
 }
