@@ -1,0 +1,214 @@
+@import "variables";
+@import "reset";
+@import "animations";
+@import "mixins";
+
+/*
+* Header styles * 
+*/
+
+body {
+    font-family: $default-fontfamily;
+}
+
+header {
+    display: flex;
+    max-width: 68.75rem;
+    margin-inline: auto;
+    font-family: $default-fontfamily;
+    text-transform: uppercase;
+    padding-block: 3rem;
+    justify-content: space-between;
+}
+
+.navbar {
+    display: flex;
+    gap: 2rem;
+
+    .ul__items {
+        display: flex;
+        list-style: none;
+        gap: 2.5rem;
+        margin-right: 1.5rem;
+        margin-block: auto;
+        font-size: 14px;
+        letter-spacing: 1px;
+        > li {
+            cursor: pointer;
+        }
+    }
+}
+
+.logo {
+    cursor: pointer;
+    max-width: 100%;
+    width: 148px;
+    height: 25px;
+    animation: Bounce 1s infinite alternate;
+}
+
+.header-btn {
+    background-color: $primary-softred;
+    color: white;
+    border: 1px solid $primary-softred;
+    padding-inline: 2.5rem;
+    padding-block: 0.5rem;
+    transition: all 0.5s ease;
+    &:hover {
+        background-color: white;
+        color: $primary-softred;
+    }
+}
+
+/*
+* first section * 
+*/
+
+main {
+}
+
+.first__section {
+    display: grid;
+    grid-template-columns: repeat(2, 37.5rem);
+    margin-left: 10rem;
+    margin-top: 5rem;
+    overflow: hidden;
+    position: relative;
+    &::after {
+        content: "";
+        position: absolute;
+        width: 200%;
+        height: 70%;
+        border-radius: 624.9375rem;
+        background-color: $primary-softblue;
+        top: 30%;
+        left: 60%;
+        z-index: -1;
+    }
+}
+
+.left__side {
+    max-width: 35rem;
+    margin-top: 2rem;
+    .left__side-subtitle {
+        max-width: 30rem;
+    }
+}
+
+.actions {
+    display: flex;
+    gap: 0.7rem;
+    .blue-overlay {
+        width: 180px;
+        background-color: $primary-softblue;
+        padding-block: 0.5rem;
+        color: white;
+        font-weight: 600;
+        border: 2px solid $primary-softblue;
+        transition: all 0.5s ease;
+        > span {
+            font-size: 13px;
+            text-transform: unset;
+        }
+        &:hover {
+            background-color: white;
+            color: $primary-softblue;
+        }
+    }
+
+    .black-overlay {
+        background-color: #ffff;
+        color: #374151;
+        width: 180px;
+        font-weight: 600;
+        padding-block: 0.5rem;
+        border: none;
+        box-shadow: 0 0 #0000, 0 0 #0000, 0 0 #0000, 0 0 #0000, 0 25px 50px -12px rgb(0 0 0 / 0.25);
+
+        > span {
+            text-transform: unset;
+        }
+        &:hover {
+            border: 2px solid black;
+        }
+    }
+}
+
+/*
+* second section * 
+*/
+
+.second__section {
+    max-width: 73rem;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 7rem;
+
+    > p {
+        max-width: 33rem;
+        margin: 0 auto;
+        margin-top: 1.5rem;
+    }
+
+    .actions {
+        position: relative;
+        margin-top: 3rem;
+        gap: 7rem;
+        margin-bottom: 2rem;
+        margin-left: -3rem;
+        border-bottom: 0.0625rem solid $neutral-gblue;
+        width: 60%;
+        justify-content: center;
+        .tab-btn {
+            font-size: 1rem;
+            &::after {
+                content: "";
+                width: 10rem;
+                height: 2px;
+                position: absolute;
+                border-bottom: 0.125rem solid $primary-softred;
+                left: 0px;
+                bottom: 0px;
+            }
+        }
+    }
+}
+
+/*
+* Reusable styles * 
+*/
+
+.btn {
+    cursor: pointer;
+    @include border-radius(10px);
+
+    > span {
+        text-transform: uppercase;
+        font-size: 0.875rem;
+    }
+}
+
+.tab-btn {
+    border: none;
+    background-color: white;
+    font-size: 18px;
+    text-transform: capitalize;
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+h1 {
+    font-size: 48px;
+    line-height: 1.2;
+    color: #252b46;
+}
+
+h2 {
+    font-size: 2.2rem;
+}
+
+p {
+    font-size: 18px;
+    opacity: 0.5;
+    margin-block: 2rem;
+}
