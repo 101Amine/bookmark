@@ -1,12 +1,16 @@
-import React from "react";
-import Header from "../components/Header";
+import React from 'react';
+import Header from '../components/Header';
+import Hero from '../components/Introduction';
 
 function Home() {
   return (
-    <div>
-      {" "}
-      <Header />{" "}
-    </div>
+    <>
+      {' '}
+      <Header />
+      <main id="main">
+        <Hero />
+      </main>
+    </>
   );
 }
 
